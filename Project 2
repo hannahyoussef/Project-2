@@ -6,9 +6,7 @@
       </title>
       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
       <script type="text/javascript">
-         //
-         // Global Variables
-         //         
+
          var currentLoc = 0;
          var points = 0;
          var navigationErrorCount = 0;
@@ -21,16 +19,12 @@
          var hasVisitedLoc3 = false;
          var hasVisitedLoc4 = false;
                   
-         //
-         // Initialization
-         //
+
          function init() {
             look();
          }
          
-         //
-         // Directional Button Event Handlers
-         //         
+    
          function btnNorth_click() {
             if (currentLoc === 0) {
                currentLoc = 1;
@@ -87,9 +81,7 @@
             }
          }
                   
-         //
-         // Story / Locale Functions
-         //
+
          function look() {
             var desc = "";
             switch(currentLoc) {
@@ -144,9 +136,7 @@
             }            
          }
 
-         //
-         // Utility Function(s)
-         //
+
          function displayMessage(msg) {
             var target = document.getElementById("taMain");
             target.value = msg + "\n\n" + target.value;
