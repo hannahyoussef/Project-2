@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>
+         Alan's Game
+      </title>
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+      <script type="text/javascript">
+         //
+         // Global Variables
+         //         
+         var currentLoc = 0;
+         var points = 0;
+         var navigationErrorCount = 0;
+         var funnyResponse = 5;
+         
+         
+         var hasVisitedLoc0 = false;
+         var hasVisitedLoc1 = false;
+         var hasVisitedLoc2 = false;
+         var hasVisitedLoc3 = false;
+         var hasVisitedLoc4 = false;
+                  
+         //
+         // Initialization
+         //
+         function init() {
+            look();
+         }
+         
+         //
+         // Directional Button Event Handlers
+         //         
+         function btnNorth_click() {
+            if (currentLoc === 0) {
+               currentLoc = 1;
+               look();               
+            } else {
+              if (currentLoc === 3) {
+                 currentLoc = 0;
+                 look();            
+              } else {
+                 navigationError(); 
+              }
+            }            
+         }
 
+         function btnSouth_click() {
+            if (currentLoc === 1) {
+               currentLoc = 0;
+               look();
+            } else {
+              if (currentLoc === 0) {
+                 currentLoc = 3;
+                 look();
+              } else {
+                 navigationError(); 
+              }
+            }
+         }
+
+         function btnEast_click() {
+            if (currentLoc === 4) {
+               currentLoc = 0;
+               look();
+            } else {
+              if (currentLoc === 0) {
+                 currentLoc = 2;
+                 look();
+              } else {
+                 navigationError(); 
+              }
+            }
+         }
+
+         function btnWest_click() {
+            if (currentLoc === 2) {
+               currentLoc = 0;
+               look();
+            } else {
+              if (currentLoc === 0) {
+                 currentLoc = 4;
+                 look();
+              } else {
+                 navigationError(); 
+              }
+            }
+         }
+                  
+         //
+         // Story / Locale Functions
+         //
+         function look() {
+            var desc = "";
+            switch(currentLoc) {
+               case 0: desc = "You are in the center.";
+                       break;
+               case 1: desc = "You are North.";
+                       break; 
+               case 2: desc = "You are East.";
+                       break;
+               case 3: desc = "You are South.";
+                       break;
+               case 4: desc = "You are West.";
+                       break;
+               default: desc = "You can't go that way.";
+            }
+            checkScore();
+            desc = desc + "\n" + "Current Score: " + points ;
+            displayMessage(desc);
+         }
+
+         function navigationError() {
+            navigationErrorCount = navigationErrorCount + 1;
+            if (navigationErrorCount < funnyResponse) {
+               displayMessage("You cannot go that way.");
+            } else {
+               displayMessage("You can't go any further.");
+            }            
+         }
+
+         function checkScore() {
+            if (! hasVisitedLoc0) {            
+               if (currentLoc === 0) {
+                  points = points + 5;
+                  hasVisitedLoc0 = true;
+               }
+            } else if ( (! hasVisitedLoc1) && (currentLoc === 1) ) {            
+                  points = points + 5;
+                  hasVisitedLoc1 = true;
+
+            } else if ( (! hasVisitedLoc2) && (currentLoc === 2) ) {            
+                  points = points + 5;
+                  hasVisitedLoc2 = true;
+
+            } else if ( (! hasVisitedLoc3) && (currentLoc === 3) ) {            
+                  points = points + 5;
+                  hasVisitedLoc3 = true;
+
+            } else if ( (! hasVisitedLoc4) && (currentLoc === 4) ) {            
+                  points = points + 5;
+                  hasVisitedLoc4 = true;
+
+            }            
+         }
+
+         //
+         // Utility Function(s)
+         //
+         function displayMessage(msg) {
+            var target = document.getElementById("taMain");
+            target.value = msg + "\n\n" + target.value;
+         }
+      </script>
+   </head>
+   <body onload="init();">
+
+    <p>
+      Hannah's Game
+    </p>
+
+    <h1>North, South, East and West</h1>
+
+
+
+     <h1 style="color: orange; font-family: verdana; font-size: 30px;">
+         <ins>
+         Email Me
+         </ins>
+      </h1>
+       <p style="color: green;"><strong>For any questions, please click the link below to reach me at my email.</strong></p>
+      <p style="color: purple;">
+      To write to <a style="color: red;" href = "mailto:hannah.youssef1@marist.edu"> Hannah Youssef</a>, click the link and I will return your message as soon as possible.
+       </p>
+
+       <textarea id="taMain" rows="10" cols="50"></textarea>
+       
+       <br>
+       <input type="button" 
+              value="North"
+              onclick="btnNorth_click();">
+       <input type="button" 
+              value="South"
+              onclick="btnSouth_click();">
+       <input type="button" 
+              value="East"
+              onclick="btnEast_click();">
+       <input type="button" 
+              value="West"
+              onclick="btnWest_click();">
+              
+   </body>
+</html>
