@@ -105,6 +105,7 @@
             checkScore();
             desc = desc + "\n" + "Current Score: " + points ;
             displayMessage(desc);
+
          }
 
          function navigationError() {
@@ -199,21 +200,46 @@
       To write to <a style="color: red;" href = "mailto:hannah.youssef1@marist.edu"><strong> Hannah Youssef</strong></a>, click the link and I will return your message as soon as possible.
        </p>
 
-       <textarea id="taMain" rows="15" cols="50"></textarea>
+       <textarea id="taMain" rows="15" cols="50" style="color: rgb(234, 35, 105); background-color: rgba(71, 249, 127, 0.65098); border: 3px solid rgb(234, 35, 105); font-family: verdana; font-size: 12px; margin: 0px; width: 366px; height: 225px;"></textarea>
        
        <br>
-       <input type="button" 
-              value="North"
-              onclick="btnNorth_click();">
-       <input type="button" 
-              value="South"
-              onclick="btnSouth_click();">
-       <input type="button" 
-              value="East"
-              onclick="btnEast_click();">
-       <input type="button" 
-              value="West"
-              onclick="btnWest_click();">
+
+        <input type="button" value="North" onclick="btnNorth_click();" style="
+          background-color: rgba(71, 249, 127, 0.65);
+          border-width: 3px;
+          color: #ea2369;
+          font-family: verdana;
+          font-size: 15px;
+          border-color: #ea2369;
+          width: 70px;
+        ">
+
+       <input type="button" value="South" onclick="btnSouth_click();" style="background-color: rgba(71, 249, 127, 0.65);
+          border-width: 3px;
+          color: #ea2369;
+          font-family: verdana;
+          font-size: 15px;
+          border-color: #ea2369;
+          width: 70px;
+        ">
+
+       <input type="button" value="East" onclick="btnEast_click();" style="    background-color: rgba(71, 249, 127, 0.65);
+          border-width: 3px;
+          color: #ea2369;
+          font-family: verdana;
+          font-size: 15px;
+          border-color: #ea2369;
+          width: 70px;
+        ">
+
+       <input type="button" value="West" onclick="btnWest_click();" style="    background-color: rgba(71, 249, 127, 0.65);
+          border-width: 3px;
+          color: #ea2369;
+          font-family: verdana;
+          font-size: 15px;
+          border-color: #ea2369;
+          width: 70px;
+        ">
 
 
   
@@ -224,4 +250,5 @@
     </p>
               
    </body>
+   
 </html>
