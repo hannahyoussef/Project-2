@@ -2,10 +2,12 @@
 <html>
    <head>
       <title>
-         Hannah's Game
+         Hannah Youssef's Game
       </title>
       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
       <script type="text/javascript">
+         
+         //  
 
          var currentLoc = 0;
          var points = 0;
@@ -19,12 +21,14 @@
          var hasVisitedLoc3 = false;
          var hasVisitedLoc4 = false;
                   
+         //
 
          function init() {
             look();
          }
          
-    
+         //
+      
          function btnNorth_click() {
             if (currentLoc === 0) {
                currentLoc = 1;
@@ -81,6 +85,7 @@
             }
          }
                   
+         //
 
          function look() {
             var desc = "";
@@ -105,7 +110,7 @@
          function navigationError() {
             navigationErrorCount = navigationErrorCount + 1;
             if (navigationErrorCount < funnyResponse) {
-               displayMessage("You cannot go that way.");
+               displayMessage("You can't go that way.");
             } else {
                displayMessage("You can't go any further.");
             }            
@@ -136,6 +141,7 @@
             }            
          }
 
+         //
 
          function displayMessage(msg) {
             var target = document.getElementById("taMain");
@@ -143,27 +149,57 @@
          }
       </script>
    </head>
-   <body onload="init();">
+   <body onload="init();" style = "background-color: #ffe6ff">
 
-    <p>
-      Hannah's Game
+    <p style = "
+      color: #e699ff;
+      font-family: verdana;
+      font-size: 30px;
+    ">
+      Hannah Youssef's Game
     </p>
 
-    <h1>North, South, East and West</h1>
+    <h1 style = "
+        color: #ff0066; 
+        text-align: center; 
+        font-size: 50px; 
+        font-family: cursive;
+        text-decoration: underline;
+        ">
+          North, South, East & West</h1>
+
+      <p style = "
+          color: #862d59;
+          font-size: 15px;
+          font-family: Georgia;
+          text-align: center;
+          ">
+        <b><big>Welcome to my game!</big></b> This game tests your ability to navigate about a fixed point in the center. 
+      </br>
+        <b><big>Directions:</big></b> when you first start the game, you begin in the <b>middle</b> of the board. 
+      </br>
+        If you click the buttons <b>"North", "South", "East", or "West",</b> they will move you one space in either direction. 
+      </br>
+        If you try to click the same direction button twice, then you will <b>not</b> be able to move any farther than you are. 
+      </br>
+        A score will keep track of your progress. <i><mark>Try to beat your high score next time!</mark></i>
+      </p>
 
 
-
-     <h1 style="color: orange; font-family: verdana; font-size: 30px;">
-         <ins>
-         Email Me
-         </ins>
+     <h1 style="
+        color: #33ccff; 
+        font-family: verdana; 
+        font-size: 20px;
+        text-decoration: underline;
+        ">
+         Email Me:
       </h1>
-       <p style="color: green;"><strong>For any questions, please click the link below to reach me at my email.</strong></p>
+       <p style="color: purple;"><strong>For any questions, please click the link below to reach me at my email.</strong></p>
       <p style="color: purple;">
-      To write to <a style="color: red;" href = "mailto:hannah.youssef1@marist.edu"> Hannah Youssef</a>, click the link and I will return your message as soon as possible.
+      To write to <a style="color: red;" href = "mailto:hannah.youssef1@marist.edu"><strong> Hannah Youssef</strong></a>, click the link and I will return your message as soon as possible.
        </p>
 
-       <textarea id="taMain" rows="10" cols="50"></textarea>
+       <textarea id="taMain" rows="15" cols="50"></textarea>
        
        <br>
        <input type="button" 
@@ -178,6 +214,14 @@
        <input type="button" 
               value="West"
               onclick="btnWest_click();">
+
+
+  
+  <hr>
+
+    <p>All information on this site is <strong>&copy;
+      Hannah Youssef, 2016.</strong>
+    </p>
               
    </body>
 </html>
